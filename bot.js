@@ -26,7 +26,7 @@ var formatter0 = new Intl.NumberFormat("de-DE", {
   //maximumFractionDigits: 0, // (causes 2500.99 to be printed as $2,501)
 });
 
-var formatter2 = new Intl.NumberFormat("es-ES", {
+var formatter2 = new Intl.NumberFormat("de-DE", {
   style: "currency",
   currency: "USD",
   minimumFractionDigits: 2,
@@ -241,7 +241,7 @@ bot.command(`floor`, (context) => {
   const comm = context.message.text;
   if (OPENSEAslug.length == 0) {
     context.reply(
-      `Need to indicate an OpenSea collection's slug after ${cmdfloor}.\nDon't know what a slug is? use /slug`
+      `Need to indicate an OpenSea collection's slug after ${cmdfloor}.\ne.g. 👇\n${cmdfloor} otherdeed\nDon't know what a slug is? use /slug`
     );
   }
   async function callfloor(slug) {
@@ -294,7 +294,7 @@ bot.command(`floorurl`, (context) => {
   const comm = context.message.text;
   if (OPENSEAslug.length == 0) {
     context.reply(
-      `Need to indicate an OpenSea collection's slug after ${cmdfloorURL}.\nDon't know what a slug is? use /slug`
+      `Need to indicate an OpenSea collection's slug after ${cmdfloorURL}.\ne.g. 👇\n${cmdfloorURL} otherdeed\nDon't know what a slug is? use /slug`
     );
   }
   async function callfloor(slug) {
@@ -345,7 +345,7 @@ bot.command("slug", (context) => {
 // return most used OS slug
 bot.command("commonslug", (context) => {
   context.reply(
-    `here you have some slugs to use after /floor command, easy to copypasta 🎩 👇`
+    `here you have some slugs to use after /floor command, easy to copypasta\ne.g.\n${cmdfloor} otherdeed\n🎩 👇`
   );
   setTimeout(() => {
     context.reply(BAYC.slug);
